@@ -1,0 +1,72 @@
+.sidebar(role='navigation')
+    ul#side-menu.nav
+        li.sidebar-search
+            .input-group.custom-search-form
+                input.form-control(type='text', placeholder='Search...')
+                span.input-group-btn
+                    button.btn.btn-default(type='button')
+                        i.fa.fa-search
+        li.active
+            a(href='/dashboard', target='_parent')
+                i.fa.fa-dashboard.fa-fw
+                |  Dashboard
+        li
+            a(href='#')
+                i.fa.fa-globe.fa-fw
+                |  Track
+                span.fa.arrow
+            ul.nav.nav-second-level
+                li
+                    a(href='/track/live') Live
+                li
+                    a(href='/track/historical') Historical
+        li
+            a(href='#')
+                i.fa.fa-briefcase
+                |  Insurance
+                span.fa.arrow
+            ul.nav.nav-second-level
+                li
+                    a(href='/insurance/payments') Payments
+                li
+                    a(href='/insurance/policy') Policy
+                li
+                    a(href='/insurance/documents') Documents
+                li
+                    a(href='/insurance/claims') Claims
+        li
+            a(href='#')
+                i.fa.fa-user.fa-fw
+                |  Account
+                span.fa.arrow
+            ul.nav.nav-second-level
+                li
+                    a(href='/account/cars') Cars
+                li
+                    a(href='/account/drivers') Drivers
+                li
+                    a(href='/account/maintenance') Maintenance
+                li
+                    a(href='/account/alerts') Alerts
+                li
+                    a(href='/account/profile') Profile
+        li
+            a(href='#')
+                i.fa.fa-bar-chart-o.fa-fw
+                |  Statistics
+                span.fa.arrow
+            ul.nav.nav-second-level
+                li
+                    a(href='/statistics/costs') Costs
+                li
+                    a(href='/statistics/gas') Gas
+                li
+                    a(href='/statistics/distance') Distance
+                li
+                    a(href='/statistics/locations') Locations
+                li
+                    a(href='/statistics/speed') Speed
+                li
+                    a(href='/statistics/time') Time
+                li
+                    a(href='/statistics/engine') Engine

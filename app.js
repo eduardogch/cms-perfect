@@ -29,6 +29,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var dashboardController = require('./controllers/dashboard');
 
 /**
  * API keys and Passport configuration.
@@ -197,6 +198,10 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
   res.redirect('/api/venmo');
 });
 
+/**
+ * Dashboard routes.
+ */
+app.get('/dashboard', passportConf.isAuthenticated, dashboardController.getDashboard);
 
 /**
  * Error Handler.
