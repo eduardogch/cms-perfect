@@ -28,7 +28,6 @@ var sass = require('node-sass-middleware');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
-var contactController = require('./controllers/contact');
 var dashboardController = require('./controllers/dashboard');
 
 /**
@@ -109,8 +108,6 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
-app.get('/contact', contactController.getContact);
-app.post('/contact', contactController.postContact);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
@@ -202,6 +199,8 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
  * Dashboard routes.
  */
 app.get('/dashboard', passportConf.isAuthenticated, dashboardController.getDashboard);
+app.post('/dashboard', passportConf.isAuthenticated, dashboardController.postContact);
+
 
 /**
  * Error Handler.

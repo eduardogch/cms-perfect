@@ -13,7 +13,7 @@ MainApp.config(function(uiGmapGoogleMapApiProvider) {
 });
 
 /**
- * Init Sidebar & Navbar
+ * Init Sidebar
  */
 $(function() {
     $('#side-menu').metisMenu()

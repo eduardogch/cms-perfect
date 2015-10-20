@@ -1,10 +1,10 @@
 /**
- * Account Angular Service
+ * Dashboard Angular Service
  */
-App.factory('AccountService', function($http) {
+App.factory('DashboardService', function($http) {
     return {
         helloWorld: function() {
-            return "hola mundo Account";
+            return "hola mundo Dashboard";
         },
         getPricing: function() {
             return $http.get( '/account/pricing', {} );

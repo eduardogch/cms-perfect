@@ -11,27 +11,30 @@ html
     link(rel='stylesheet', href='/css/main.css')
     block css
 
-  body
+  body(ng-app='MainApp')
     include ../partials/header
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
           include ../partials/sidebar
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          h1.page-header #{title}
           include ../partials/flash
           block content
 
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/vendor/metisMenu/dist/metisMenu.min.js')
+    script(src='/vendor/lodash/lodash.min.js')
 
     script(src='/vendor/angular/angular.min.js')
     script(src='/vendor/angular-animate/angular-animate.min.js')
     script(src='/vendor/angular-resource/angular-resource.min.js')
     script(src='/vendor/angular-route/angular-route.js')
     script(src='/vendor/angular-google-maps/dist/angular-google-maps.js')
-    script(src='/vendor/lodash/lodash.min.js')
-
-    script(src='/vendor/metisMenu/dist/metisMenu.min.js')
 
     script(src='/js/MainApp.js')
+    script(src='/js/controllers/DashboardController.js')
+    script(src='/js/services/DashboardService.js')
+
     block js
