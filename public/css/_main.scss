@@ -133,7 +133,7 @@ hr {
 // Home
 // -------------------------
 
-#headerwrap {
+.header-wrap {
   margin-top: -20px;
   margin-left: -15px;
   margin-right: -15px;
@@ -141,7 +141,7 @@ hr {
   background: $brand-primary;
 }
 
-#headerwrap h1 {
+.header-wrap h1 {
   margin-top: 60px;
   margin-bottom: 15px;
   color: white;
@@ -150,12 +150,12 @@ hr {
   letter-spacing: 1px;
 }
 
-.mt {
+.marketing {
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-#zipcode-input {
+.zipcode-input {
   button {
     padding: 8px 10px;
   }

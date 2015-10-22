@@ -1,11 +1,6 @@
-extends ../layouts/frontend
+extends ../layouts/backend
 
 block content
-  .page-header
-    h2
-      i.fa.fa-phone(style='color: #f00')
-      | Twilio API
-
   .btn-group.btn-group-justified
     a.btn.btn-primary(href='http://twilio.github.io/twilio-node/', target='_blank')
       i.fa.fa-check-square-o
@@ -18,7 +13,6 @@ block content
       | REST API
 
   br
-
   .row
     .col-sm-6
       form(role='form', method='POST')

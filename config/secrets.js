@@ -97,8 +97,8 @@ module.exports = {
   },
 
   twilio: {
-    sid: process.env.TWILIO_SID || 'AC6f0edc4c47becc6d0a952536fc9a6025',
-    token: process.env.TWILIO_TOKEN || 'a67170ff7afa2df3f4c7d97cd240d0f3'
+    sid: process.env.TWILIO_SID || 'AC25e6e18361dce88f16ee27641d8cedd3',
+    token: process.env.TWILIO_TOKEN || '28b8cb16e8a1707a148449104f5dc8c7'
   },
 
   clockwork: {

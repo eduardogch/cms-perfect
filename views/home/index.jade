@@ -1,7 +1,7 @@
 extends ../layouts/frontend
 
 block content
-   #headerwrap
+   .header-wrap
       .container
          .row
             .col-lg-6
@@ -11,7 +11,7 @@ block content
                   | and manage right your car.
                form.form-inline(method='POST', role='form', action='/')
                   input(type='hidden', name='_csrf', value=_csrf)
-                  .form-group.input-group.col-sm-offset-2#zipcode-input
+                  .form-group.input-group.col-sm-offset-2.zipcode-input
                      input.form-control(type='text', placeholder='Enter ZipCode')
                      span.input-group-btn
                         button.btn.btn-warning.btn-lg(type='submit') Get a Quota
@@ -19,7 +19,7 @@ block content
                img.img-responsive(src='/img/ipad-hand.png', alt='')
 
    .container(id='works')
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-6.col-lg-offset-3
             h1
                | It is really simple
@@ -27,7 +27,7 @@ block content
                | how MetricStorm works
             h3
                | The miles you drive, the miles you pay in car insurance.
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-4
             img(src='/img/ser02.png', width='180', alt='')
             h4 1 - Used MetricStorm platform.
@@ -46,12 +46,12 @@ block content
 
    .container(id='price')
       hr
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-6.col-lg-offset-3
             h1 MetricStorm is for Everyone
             h3
                | The price will be according with the miles driven but check this examples.
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-6.col-lg-offset-3
             #carousel-example-generic.carousel.slide(data-ride='carousel')
                ol.carousel-indicators
@@ -70,7 +70,7 @@ block content
       hr
 
    .container
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-6.col-lg-offset-3
             h1
                | Questions, Comments
@@ -78,7 +78,7 @@ block content
                | & Suggestions
             h3
                | Our entire awesome team works daily to build the world's best insurance technology tool.
-      .row.mt.text-center
+      .row.marketing.text-center
          .col-lg-4
             img.img-circle(src='/img/pic1.jpg', width='140', alt='')
             h4 Eduardo Gonzalez
