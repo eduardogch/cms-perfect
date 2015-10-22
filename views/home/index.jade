@@ -1,27 +1,117 @@
 extends ../layouts/frontend
 
 block content
-   h1 CMS Perfect
-   p.lead Platform to build a perfect CMS in Node.js
-   hr
-   .row
-      .col-sm-6
-         h2 Heading
-         p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-         p
-            a.btn.btn-default(href='/dashboard', role='button') View details »
-      .col-sm-6
-         h2 Heading
-         p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-         p
-            a.btn.btn-default(href='/dashboard', role='button') View details »
-      .col-sm-6
-         h2 Heading
-         p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-         p
-            a.btn.btn-default(href='/dashboard', role='button') View details »
-      .col-sm-6
-         h2 Heading
-         p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-         p
-            a.btn.btn-default(href='/dashboard', role='button') View details »
+   #headerwrap
+      .container
+         .row
+            .col-lg-6
+               h1
+                  | Cut costs in car insurance
+                  br
+                  | and manage right your car.
+               form.form-inline(method='POST', role='form', action='/')
+                  input(type='hidden', name='_csrf', value=_csrf)
+                  .form-group.input-group.col-sm-offset-2#zipcode-input
+                     input.form-control(type='text', placeholder='Enter ZipCode')
+                     span.input-group-btn
+                        button.btn.btn-warning.btn-lg(type='submit') Get a Quota
+            .col-lg-6
+               img.img-responsive(src='/img/ipad-hand.png', alt='')
+
+   .container(id='works')
+      .row.mt.text-center
+         .col-lg-6.col-lg-offset-3
+            h1
+               | It is really simple
+               br
+               | how MetricStorm works
+            h3
+               | The miles you drive, the miles you pay in car insurance.
+      .row.mt.text-center
+         .col-lg-4
+            img(src='/img/ser02.png', width='180', alt='')
+            h4 1 - Used MetricStorm platform.
+            p
+               | MetricStorm platform will receive miles driven from a device installed in your car.
+         .col-lg-4
+            img(src='/img/ser01.png', width='180', alt='')
+            h4 2 - Check 24/7 cost in car insurance.
+            p
+               | Check online the balance in your car insurance and other important information from your car.
+         .col-lg-4
+            img(src='/img/ser03.png', width='180', alt='')
+            h4 3 - Pay according miles driven.
+            p
+               | End of the month, time to pay car insurance according with the MetricStorm data.
+
+   .container(id='price')
+      hr
+      .row.mt.text-center
+         .col-lg-6.col-lg-offset-3
+            h1 MetricStorm is for Everyone
+            h3
+               | The price will be according with the miles driven but check this examples.
+      .row.mt.text-center
+         .col-lg-6.col-lg-offset-3
+            #carousel-example-generic.carousel.slide(data-ride='carousel')
+               ol.carousel-indicators
+                  li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                  li(data-target='#carousel-example-generic', data-slide-to='1')
+                  li(data-target='#carousel-example-generic', data-slide-to='2')
+               .carousel-inner
+                  .item.active
+                     img(src='/img/p01.png', alt='')
+                  .item
+                     img(src='/img/p02.png', alt='')
+                  .item
+                     img(src='/img/p03.png', alt='')
+
+   .container(id='contact')
+      hr
+
+   .container
+      .row.mt.text-center
+         .col-lg-6.col-lg-offset-3
+            h1
+               | Questions, Comments
+               br
+               | & Suggestions
+            h3
+               | Our entire awesome team works daily to build the world's best insurance technology tool.
+      .row.mt.text-center
+         .col-lg-4
+            img.img-circle(src='/img/pic1.jpg', width='140', alt='')
+            h4 Eduardo Gonzalez
+            p
+               | Mexican engineer in U.S.A, living my live through my passions in technology, photography, cooking, traveling and teaching.
+            p
+               a(href='mailto:eduardo.gch@gmail.com')
+                  i.fa.fa-envelope
+               a(href='https://twitter.com/eduardochavira_' target="_blank")
+                  i.fa.fa-twitter-square
+               a(href='https://instagram.com/eduardochavira_/' target="_blank")
+                  i.fa.fa-instagram
+         .col-lg-4
+            img.img-circle(src='/img/pic2.jpg', width='140', alt='')
+            h4 Pete Ford
+            p
+               | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+            p
+               a(href='mailto:eduardo.gch@gmail.com')
+                  i.fa.fa-envelope
+               a(href='https://twitter.com/eduardochavira_' target="_blank")
+                  i.fa.fa-twitter-square
+               a(href='https://instagram.com/eduardochavira_/' target="_blank")
+                  i.fa.fa-instagram
+         .col-lg-4
+            img.img-circle(src='/img/pic3.jpg', width='140', alt='')
+            h4 Angelica Finning
+            p
+               | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+            p
+               a(href='mailto:eduardo.gch@gmail.com')
+                  i.fa.fa-envelope
+               a(href='https://twitter.com/eduardochavira_' target="_blank")
+                  i.fa.fa-twitter-square
+               a(href='https://instagram.com/eduardochavira_/' target="_blank")
+                  i.fa.fa-instagram
