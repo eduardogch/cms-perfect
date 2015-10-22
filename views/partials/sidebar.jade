@@ -12,61 +12,39 @@
                 |  Dashboard
         li
             a(href='#')
-                i.fa.fa-globe.fa-fw
-                |  Track
+                i.fa.fa-user.fa-fw
+                |  Account Module
                 span.fa.arrow
             ul.nav.nav-second-level
                 li
-                    a(href='/track/live') Live
+                    a(href='/account') My Account
                 li
-                    a(href='/track/historical') Historical
+                    a(href='/account/documents') Documents
         li
             a(href='#')
                 i.fa.fa-briefcase
-                |  Insurance
+                |  Admin Module
                 span.fa.arrow
             ul.nav.nav-second-level
                 li
-                    a(href='/insurance/payments') Payments
+                    a(href='/admin') Users
                 li
-                    a(href='/insurance/policy') Policy
-                li
-                    a(href='/insurance/documents') Documents
-                li
-                    a(href='/insurance/claims') Claims
+                    a(href='/admin/groups') Groups
         li
             a(href='#')
-                i.fa.fa-user.fa-fw
-                |  Account
+                i.fa.fa-money.fa-fw
+                |  Payment Module
                 span.fa.arrow
             ul.nav.nav-second-level
                 li
-                    a(href='/account/cars') Cars
+                    a(href='/payment') History Payments
                 li
-                    a(href='/account/drivers') Drivers
+                    a(href='/payment/onetime') One-Time Payment
                 li
-                    a(href='/account/maintenance') Maintenance
+                    a(href='/payment/ticket') Print Payment (Oxxo)
                 li
-                    a(href='/account/alerts') Alerts
+                    a(href='/payment/recurring') Recurring Payments
                 li
-                    a(href='/account/profile') Profile
-        li
-            a(href='#')
-                i.fa.fa-bar-chart-o.fa-fw
-                |  Statistics
-                span.fa.arrow
-            ul.nav.nav-second-level
+                    a(href='/payment/accounts') Saved Payment Accounts
                 li
-                    a(href='/statistics/costs') Costs
-                li
-                    a(href='/statistics/gas') Gas
-                li
-                    a(href='/statistics/distance') Distance
-                li
-                    a(href='/statistics/locations') Locations
-                li
-                    a(href='/statistics/speed') Speed
-                li
-                    a(href='/statistics/time') Time
-                li
-                    a(href='/statistics/engine') Engine
+                    a(href='/payment/billing') Billing

@@ -125,8 +125,20 @@ footer {
     color: #ffffff;
     font-weight: bold;
     background-color: transparent;
-
     &:hover {
+      background-color: transparent;
+    }
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+    &:focus {
       background-color: transparent;
     }
   }

@@ -21,7 +21,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var sass = require('node-sass-middleware');
 
-
 /**
  * Controllers (route handlers).
  */
@@ -29,6 +28,8 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var dashboardController = require('./controllers/dashboard');
+var adminController = require('./controllers/admin');
+var paymentController = require('./controllers/payment');
 
 /**
  * API keys and Passport configuration.
@@ -94,11 +95,15 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
-
 /**
- * Primary app routes.
+ * Home routes.
  */
 app.get('/', homeController.index);
+app.post('/', homeController.index);
+
+/**
+ * User routes.
+ */
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -201,6 +206,21 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 app.get('/dashboard', passportConf.isAuthenticated, dashboardController.getDashboard);
 app.post('/dashboard', passportConf.isAuthenticated, dashboardController.postContact);
 
+/**
+ * Admin routes.
+ */
+app.get('/admin', passportConf.isAuthenticated, adminController.index);
+app.get('/admin/groups', passportConf.isAuthenticated, adminController.index);
+
+/**
+ * Payment routes.
+ */
+app.get('/payment', passportConf.isAuthenticated, paymentController.index);
+app.get('/payment/onetime', passportConf.isAuthenticated, paymentController.index);
+app.get('/payment/ticket', passportConf.isAuthenticated, paymentController.index);
+app.get('/payment/recurring', passportConf.isAuthenticated, paymentController.index);
+app.get('/payment/accounts', passportConf.isAuthenticated, paymentController.index);
+app.get('/payment/billing', passportConf.isAuthenticated, paymentController.index);
 
 /**
  * Error Handler.
