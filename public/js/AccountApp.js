@@ -29,8 +29,3 @@ AccountApp.config(function(uiGmapGoogleMapApiProvider) {
         libraries: 'weather,geometry,visualization'
     });
 });
-
-/**
- * Init Sidebar
- */
-$('#side-menu').metisMenu();
