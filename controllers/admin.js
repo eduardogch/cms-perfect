@@ -3,8 +3,9 @@
  * Admin page.
  */
 exports.index = function(req, res) {
-  res.render('admin/index', {
+  res.render('layouts/angular', {
     title: 'Admin',
-    angularApp: 'AdminApp'
+    angularApp: 'AdminApp',
+    angularController: 'AdminController'
   });
 };

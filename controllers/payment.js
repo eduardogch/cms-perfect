@@ -3,8 +3,9 @@
  * Payment page.
  */
 exports.index = function(req, res) {
-  res.render('payment/index', {
+  res.render('layouts/angular', {
     title: 'Payment',
-    angularApp: 'PaymentApp'
+    angularApp: 'PaymentApp',
+    angularController: 'PaymentController'
   });
 };

@@ -10,7 +10,8 @@ var App = DashboardApp;
 DashboardApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
         when('/', {
-            controller: 'DashboardController'
+            controller: 'DashboardController',
+            templateUrl: '/js/views/dashboard_index.html'
         }).
         otherwise({redirectTo: '/'});
 

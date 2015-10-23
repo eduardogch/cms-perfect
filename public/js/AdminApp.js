@@ -9,6 +9,10 @@ var App = AdminApp;
  */
 AdminApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
+        when('/', {
+            controller: 'AdminController',
+            templateUrl: '/js/views/admin_index.html'
+        }).
         when('/groups', {
             controller: 'AdminController',
             templateUrl: '/js/views/admin_groups.html'

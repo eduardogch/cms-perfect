@@ -4,6 +4,7 @@ block content
   div(ng-controller='AccountController', ng-cloak)
     .page-header
       h3 Profile Information
+      div(ng-view)
 
     form.form-horizontal(action='/account/profile', method='POST')
       input(type='hidden', name='_csrf', value=_csrf)

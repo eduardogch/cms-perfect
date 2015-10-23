@@ -9,9 +9,13 @@ var App = AccountApp;
  */
 AccountApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
-        when('/account', {
+        when('/', {
             controller: 'AccountController',
-            templateUrl: '/js/views/example_footer.html'
+            templateUrl: '/js/views/account_index.html'
+        }).
+        when('/documents', {
+            controller: 'AccountController',
+            templateUrl: '/js/views/account_documents.html'
         }).
         otherwise({redirectTo: '/'});
 

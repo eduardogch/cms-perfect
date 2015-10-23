@@ -9,9 +9,29 @@ var App = PaymentApp;
  */
 PaymentApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
-        when('/payment', {
+        when('/', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/example_footer.html'
+            templateUrl: '/js/views/payment_index.html'
+        }).
+        when('/onetime', {
+            controller: 'PaymentController',
+            templateUrl: '/js/views/payment_onetime.html'
+        }).
+        when('/ticket', {
+            controller: 'PaymentController',
+            templateUrl: '/js/views/payment_ticket.html'
+        }).
+        when('/recurring', {
+            controller: 'PaymentController',
+            templateUrl: '/js/views/payment_recurring.html'
+        }).
+        when('/accounts', {
+            controller: 'PaymentController',
+            templateUrl: '/js/views/payment_accounts.html'
+        }).
+        when('/billing', {
+            controller: 'PaymentController',
+            templateUrl: '/js/views/payment_billing.html'
         }).
         otherwise({redirectTo: '/'});
 
