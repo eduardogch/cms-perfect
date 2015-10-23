@@ -9,7 +9,6 @@ var App = PaymentApp;
  */
 PaymentApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
-        when('/', { redirectTo: '/payment' }).
         when('/payment', {
             controller: 'PaymentController',
             templateUrl: '/js/views/example_footer.html'

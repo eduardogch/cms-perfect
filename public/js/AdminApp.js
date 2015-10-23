@@ -9,10 +9,9 @@ var App = AdminApp;
  */
 AdminApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
-        when('/', { redirectTo: '/admin' }).
-        when('/admin', {
+        when('/groups', {
             controller: 'AdminController',
-            templateUrl: '/js/views/example_footer.html'
+            templateUrl: '/js/views/admin_groups.html'
         }).
         otherwise({redirectTo: '/'});
 

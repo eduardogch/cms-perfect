@@ -9,13 +9,12 @@ var App = AccountApp;
  */
 AccountApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
-        when('/', { redirectTo: '/account' }).
         when('/account', {
             controller: 'AccountController',
             templateUrl: '/js/views/example_footer.html'
         }).
         otherwise({redirectTo: '/'});
-    //
+
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|coui):/);
     })
