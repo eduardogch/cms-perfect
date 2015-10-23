@@ -1,5 +1,5 @@
 #CMS Perfect - Platform to build a perfect CMS in Node.js
-`Version: 1.0.0 Stable`
+`Version: 1.5.0 Stable`
 
 -----
 
@@ -26,11 +26,11 @@ Just run in the console this commands:
 	cd ~/Apps
 	git clone https://eduardogch@bitbucket.org/eduardogch/cms-perfect.git
 	cd cms-perfect
-	npm install
+	npm dedupe && npm install
 	sudo npm install -g nodemon mocha gulp bower
 	bower install
-	gulp
-
+	nodemon app.js
+	
 -----
 
 ## Run, debug and test
@@ -60,5 +60,7 @@ In Webstorm for testing use Mocha
 Email [Email](mailto:eduardo.gch@gmail.com)
 
 Bitbucket [Bitbucket](https://bitbucket.org/eduardogch/cms-perfect)
+
+Issues [Bitbucket](https://bitbucket.org/eduardogch/cms-perfect/issues)
 
 Twitter [Twitter](https://twitter.com/eduardochavira_)
