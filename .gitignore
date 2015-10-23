@@ -17,6 +17,7 @@ tmp
 node_modules
 bower_components
 public/vendor/*
+public/css/resources.css
 
 # Editors
 .idea
