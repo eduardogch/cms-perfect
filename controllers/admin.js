@@ -4,6 +4,7 @@
  */
 exports.index = function(req, res) {
   res.render('admin/index', {
-    title: 'Admin'
+    title: 'Admin',
+    angularApp: 'AdminApp'
   });
 };

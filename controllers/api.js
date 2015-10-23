@@ -415,14 +415,11 @@ exports.postStripe = function(req, res, next) {
 
 /**
  * GET /api/conekta
- * Stripe API example.
+ * Conekta API example.
  */
 exports.getConekta = function(req, res) {
-  conekta = require('conekta')(secrets.stripe.secretKey);
-
   res.render('api/conekta', {
-    title: 'Conekta API',
-    publishableKey: secrets.stripe.publishableKey
+    title: 'Conekta API'
   });
 };
 

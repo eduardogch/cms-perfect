@@ -4,6 +4,7 @@
  */
 exports.index = function(req, res) {
   res.render('payment/index', {
-    title: 'Payment'
+    title: 'Payment',
+    angularApp: 'PaymentApp'
   });
 };

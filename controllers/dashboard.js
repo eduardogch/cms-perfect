@@ -14,7 +14,8 @@ var transporter = nodemailer.createTransport({
  */
 exports.getDashboard = function(req, res) {
   res.render('dashboard/index', {
-    title: 'Dashboard'
+    title: 'Dashboard',
+    angularApp: 'DashboardApp'
   });
 };
 

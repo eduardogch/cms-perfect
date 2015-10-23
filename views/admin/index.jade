@@ -1,4 +1,14 @@
 extends ../layouts/backend
 
 block content
-  div(ng-controller='AdminController')
+  div(ng-controller='AdminController', ng-cloak)
+    .panel-body
+      label Name:
+      input(type='text', ng-model='yourName', placeholder='Enter a name here')
+      br
+      h1 Hello {{yourName}}!
+      h2 {{bankBalance}}
+      br
+      h2 {{helloWorld}}
+      br
+      h2 {{currentSelection}}

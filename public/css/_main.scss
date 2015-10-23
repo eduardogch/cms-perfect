@@ -167,3 +167,14 @@ hr {
 .flash-boxes {
   margin-top: 70px;
 }
+
+// Angular
+// -------------------------
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
+}
+
+ng\:form {
+  display: block;
+}
