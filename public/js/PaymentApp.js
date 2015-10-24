@@ -11,27 +11,27 @@ PaymentApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
         when('/', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_index.html'
+            templateUrl: 'views/payment_index'
         }).
         when('/onetime', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_onetime.html'
+            templateUrl: 'views/payment_onetime'
         }).
         when('/ticket', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_ticket.html'
+            templateUrl: 'views/payment_ticket'
         }).
         when('/recurring', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_recurring.html'
+            templateUrl: 'views/payment_recurring'
         }).
         when('/accounts', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_accounts.html'
+            templateUrl: 'views/payment_accounts'
         }).
         when('/billing', {
             controller: 'PaymentController',
-            templateUrl: '/js/views/payment_billing.html'
+            templateUrl: 'views/payment_billing'
         }).
         otherwise({redirectTo: '/'});
 

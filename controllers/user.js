@@ -107,9 +107,10 @@ exports.postSignup = function(req, res, next) {
  * Profile page.
  */
 exports.getAccount = function(req, res) {
-  res.render('account/profile', {
+  res.render('layouts/backend', {
     title: 'Account Management',
-    angularApp: 'AccountApp'
+    angularApp: 'AccountApp',
+    angularController: 'AccountController'
   });
 };
 

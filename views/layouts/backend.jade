@@ -9,6 +9,7 @@ html
     meta(name='csrf-token', content=_csrf)
     title #{title} - CMS Perfect
     link(rel='stylesheet', href='/css/resources.css')
+    //base(href='/')
 
   body(ng-app="#{angularApp ? angularApp : 'DashboardApp'}")
     include ../partials/navbar
@@ -20,6 +21,8 @@ html
           h2.page-header #{title}
           include ../partials/flash
           block content
+          div(ng-controller="#{angularController ? angularController : 'AdminController'}", ng-cloak)
+            div(ng-view)
 
     // Vendors JS
     script(src='/vendor/jquery/dist/jquery.min.js')

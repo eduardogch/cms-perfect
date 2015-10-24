@@ -201,6 +201,17 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 });
 
 /**
+ * Angular Jade views & partials.
+ */
+app.get('/views/:name', function (req, res) {
+  res.render('angular/' + req.params.name);
+});
+
+app.get('/partials/:name', function (req, res) {
+  res.render('angular/partials' + req.params.name);
+});
+
+/**
  * Dashboard routes.
  */
 app.get('/dashboard', passportConf.isAuthenticated, dashboardController.getDashboard);

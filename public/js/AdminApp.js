@@ -7,15 +7,16 @@ var App = AdminApp;
 /**
  * Main Configs
  */
-AdminApp.config(function($routeProvider, $compileProvider) {
+AdminApp.config(function($routeProvider, $compileProvider, $locationProvider) {
+    //$locationProvider.html5Mode(true);
     $routeProvider.
         when('/', {
             controller: 'AdminController',
-            templateUrl: '/js/views/admin_index.html'
+            templateUrl: 'views/admin_index'
         }).
         when('/groups', {
             controller: 'AdminController',
-            templateUrl: '/js/views/admin_groups.html'
+            templateUrl: 'views/admin_groups'
         }).
         otherwise({redirectTo: '/'});
 
