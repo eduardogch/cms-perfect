@@ -1,11 +1,11 @@
 /**
- * Main Angular Module
+ * Dashboard Angular Module
  */
 var DashboardApp = angular.module('DashboardApp', ['ngResource','ngRoute','ngAnimate','uiGmapgoogle-maps']);
 var App = DashboardApp;
 
 /**
- * Main Configs
+ * Dashboard Configs
  */
 DashboardApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.

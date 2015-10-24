@@ -109,8 +109,7 @@ exports.postSignup = function(req, res, next) {
 exports.getAccount = function(req, res) {
   res.render('layouts/backend', {
     title: 'Account Management',
-    angularApp: 'AccountApp',
-    angularController: 'AccountController'
+    angularApp: 'AccountApp'
   });
 };
 

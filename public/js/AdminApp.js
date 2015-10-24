@@ -1,14 +1,13 @@
 /**
- * Main Angular Module
+ * Admin Angular Module
  */
 var AdminApp = angular.module('AdminApp', ['ngResource','ngRoute','ngAnimate','uiGmapgoogle-maps']);
 var App = AdminApp;
 
 /**
- * Main Configs
+ * Admin Configs
  */
-AdminApp.config(function($routeProvider, $compileProvider, $locationProvider) {
-    //$locationProvider.html5Mode(true);
+AdminApp.config(function($routeProvider, $compileProvider) {
     $routeProvider.
         when('/', {
             controller: 'AdminController',

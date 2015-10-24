@@ -5,9 +5,9 @@
 exports.index = function(req, res) {
   res.render('layouts/backend', {
     title: 'Payment',
-    angularApp: 'PaymentApp',
-    angularController: 'PaymentController'
+    angularApp: 'PaymentApp'
   });
+  test = req.body.test || 'gggggg';
 };
 
 /**

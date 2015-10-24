@@ -12,12 +12,12 @@
     ul.nav.navbar-nav.navbar-top-links
       // dropdown
       li.dropdown
-        a.dropdown-toggle(data-toggle='dropdown', href='#', style='color: white;')
+        a.dropdown-toggle(data-toggle='dropdown', href='#/', style='color: white;')
           i.fa.fa-envelope.fa-fw
           i.fa.fa-caret-down
         ul.dropdown-menu.dropdown-messages#dropdown-alerts-navbar
           li
-            a(href='#')
+            a(href='#/')
               div
                 strong John Smith
                 span.pull-right.text-muted
@@ -26,7 +26,7 @@
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 strong John Smith
                 span.pull-right.text-muted
@@ -35,7 +35,7 @@
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 strong John Smith
                 span.pull-right.text-muted
@@ -44,17 +44,17 @@
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
           li.divider
           li
-            a.text-center(href='#')
+            a.text-center(href='#/')
               strong Read All Messages
               i.fa.fa-angle-right
       // dropdown
       li.dropdown
-        a.dropdown-toggle(data-toggle='dropdown', href='#', style='color: white;')
+        a.dropdown-toggle(data-toggle='dropdown', href='#/', style='color: white;')
           i.fa.fa-tasks.fa-fw
           i.fa.fa-caret-down
         ul.dropdown-menu.dropdown-tasks#dropdown-alerts-navbar
           li
-            a(href='#')
+            a(href='#/')
               div
                 p
                   strong Task 1
@@ -64,7 +64,7 @@
                     span.sr-only 40% Complete (success)
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 p
                   strong Task 2
@@ -74,7 +74,7 @@
                     span.sr-only 20% Complete
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 p
                   strong Task 3
@@ -84,7 +84,7 @@
                     span.sr-only 60% Complete (warning)
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 p
                   strong Task 4
@@ -94,58 +94,58 @@
                     span.sr-only 80% Complete (danger)
           li.divider
           li
-            a.text-center(href='#')
+            a.text-center(href='#/')
               strong See All Tasks
               i.fa.fa-angle-right
       // dropdown
       li.dropdown
-        a.dropdown-toggle(data-toggle='dropdown', href='#', style='color: white;')
+        a.dropdown-toggle(data-toggle='dropdown', href='#/', style='color: white;')
           i.fa.fa-bell.fa-fw
           i.fa.fa-caret-down
         ul.dropdown-menu.dropdown-alerts#dropdown-alerts-navbar
           li
-            a(href='#')
+            a(href='#/')
               div
                 i.fa.fa-comment.fa-fw
                 |  New Comment
                 span.pull-right.text-muted.small 4 minutes ago
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 i.fa.fa-twitter.fa-fw
                 |  3 New Followers
                 span.pull-right.text-muted.small 12 minutes ago
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 i.fa.fa-envelope.fa-fw
                 |  Message Sent
                 span.pull-right.text-muted.small 4 minutes ago
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 i.fa.fa-tasks.fa-fw
                 |  New Task
                 span.pull-right.text-muted.small 4 minutes ago
           li.divider
           li
-            a(href='#')
+            a(href='#/')
               div
                 i.fa.fa-upload.fa-fw
                 |  Server Rebooted
                 span.pull-right.text-muted.small 4 minutes ago
           li.divider
           li
-            a.text-center(href='#')
+            a.text-center(href='#/')
               strong See All Alerts
               i.fa.fa-angle-right
 
     ul.nav.navbar-nav
       li.dropdown(class=title=='Account Management'?'active':undefined)
-        a.avatar.dropdown-toggle(href='#', data-toggle='dropdown')
+        a.avatar.dropdown-toggle(href='#/', data-toggle='dropdown')
           if user.profile.picture
             img(src='#{user.profile.picture}')
           else
@@ -154,9 +154,9 @@
           i.caret
         ul.dropdown-menu
           li
-            a(href='/dashboard') Dashboard
+            a(href='/dashboard#/') Dashboard
           li
-            a(href='/account') My Account
+            a(href='/account#/') My Account
           li.divider
           li
             a(href='/logout') Logout
