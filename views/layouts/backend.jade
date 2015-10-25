@@ -23,11 +23,11 @@ html
           div(ng-view, ng-cloak)
 
     // Vendors JS
+    script(src="//maps.googleapis.com/maps/api/js?sensor=false")
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
     script(src='/vendor/metisMenu/dist/metisMenu.min.js')
     script(src='/vendor/lodash/lodash.min.js')
-    script(src="//maps.googleapis.com/maps/api/js?sensor=false")
 
     // Angular Framework
     script(src='/vendor/angular/angular.js')
@@ -35,6 +35,7 @@ html
     script(src='/vendor/angular-animate/angular-animate.js')
     script(src='/vendor/angular-resource/angular-resource.js')
     script(src='/vendor/angular-google-maps/dist/angular-google-maps.js')
+    script(src='/vendor/angular-smart-table/dist/smart-table.min.js')
 
     // Angular Modules
     script(src="/js/#{angularApp ? angularApp : 'DashboardApp'}.js")

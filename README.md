@@ -12,7 +12,12 @@
 ## Project base on:
 
 	https://github.com/sahat/hackathon-starter
-	
+
+## HTML templates:
+
+	http://startbootstrap.com/template-overviews/sb-admin-2/
+	http://blacktie.co/2013/12/flatty-app-landing-page/
+
 -----
 
 ## Set up NodeJS and MongoDB

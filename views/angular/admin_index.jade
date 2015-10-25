@@ -1,11 +1,31 @@
-div
-   h1 Hola mundo Admin Index
-   label Name:
-   input(type='text', ng-model='yourName', placeholder='Enter a name here')
-   br
-   h1 Hello {{yourName}}!
-   h2 Controller {{bankBalance}}
-   br
-   h2 Service {{helloWorld}}
-   br
-   h2 {{currentSelection}}
+.row
+   .col-lg-12
+      .panel.panel-default
+         .panel-heading
+            | Angular Smart Tables
+         .panel-body
+            table.table.table-striped.table-bordered.table-hover(st-table='rowCollection')
+               thead
+                  tr
+                     th(st-sort='firstName') first name
+                     th(st-sort='lastName') last name
+                     th(st-sort='birthDate') birth date
+                     th(st-sort='balance') balance
+                     th email
+                  tr
+                     th
+                        input.input-sm.form-control(st-search="'firstName'", placeholder='search for firstname', type='search')
+                     th(colspan='4')
+                        input.input-sm.form-control(st-search='', placeholder='global search', type='search')
+               tbody
+                  tr(ng-repeat='row in rowCollection')
+                     td {{row.firstName | uppercase}}
+                     td {{row.lastName}}
+                     td {{row.birthDate | date}}
+                     td {{row.balance | currency}}
+                     td
+                        a(ng-href='{{row.email}}') email
+               tfoot
+                  tr
+                     td.text-center(colspan='5')
+                        div(st-pagination='', st-items-by-page='itemsByPage', st-displayed-pages='7')

@@ -1,7 +1,7 @@
 /**
  * Admin Angular Module
  */
-var AdminApp = angular.module('AdminApp', ['ngResource','ngRoute','ngAnimate','uiGmapgoogle-maps']);
+var AdminApp = angular.module('AdminApp', ['ngResource','ngRoute','ngAnimate','smart-table']);
 var App = AdminApp;
 
 /**
@@ -24,11 +24,3 @@ AdminApp.config(function($routeProvider, $compileProvider) {
     })
     .run(function($rootScope) {
     });
-
-AdminApp.config(function(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-        //    key: 'your api key',
-        v: '3.17',
-        libraries: 'weather,geometry,visualization'
-    });
-});
