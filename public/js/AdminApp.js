@@ -1,7 +1,7 @@
 /**
  * Admin Angular Module
  */
-var AdminApp = angular.module('AdminApp', ['ngResource','ngRoute','ngAnimate','smart-table']);
+var AdminApp = angular.module('AdminApp', ['ngResource','ngRoute','ngAnimate','datatables']);
 var App = AdminApp;
 
 /**

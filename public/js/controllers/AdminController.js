@@ -28,8 +28,6 @@ App.controller('AdminController', ['$scope', 'AdminService', function($scope, Ad
         };
     }
 
-    $scope.itemsByPage=15;
-
     $scope.rowCollection = [];
     for (var j = 0; j < 200; j++) {
         $scope.rowCollection.push(createRandomItem());

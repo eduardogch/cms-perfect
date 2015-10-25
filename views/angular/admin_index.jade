@@ -4,28 +4,22 @@
          .panel-heading
             | Angular Smart Tables
          .panel-body
-            table.table.table-striped.table-bordered.table-hover(st-table='rowCollection')
+            table.table.table-striped.table-bordered.table-hover(datatable='')
                thead
                   tr
-                     th(st-sort='firstName') first name
-                     th(st-sort='lastName') last name
-                     th(st-sort='birthDate') birth date
-                     th(st-sort='balance') balance
-                     th email
-                  tr
-                     th
-                        input.input-sm.form-control(st-search="'firstName'", placeholder='search for firstname', type='search')
-                     th(colspan='4')
-                        input.input-sm.form-control(st-search='', placeholder='global search', type='search')
+                     th ID
+                     th First name
+                     th Last name
                tbody
-                  tr(ng-repeat='row in rowCollection')
-                     td {{row.firstName | uppercase}}
-                     td {{row.lastName}}
-                     td {{row.birthDate | date}}
-                     td {{row.balance | currency}}
-                     td
-                        a(ng-href='{{row.email}}') email
-               tfoot
                   tr
-                     td.text-center(colspan='5')
-                        div(st-pagination='', st-items-by-page='itemsByPage', st-displayed-pages='7')
+                     td 1
+                     td Foo
+                     td Bar
+                  tr
+                     td 123
+                     td Someone
+                     td Youknow
+                  tr
+                     td 987
+                     td Iamout
+                     td Ofinspiration
