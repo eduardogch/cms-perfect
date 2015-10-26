@@ -21,8 +21,8 @@ public/css/resources.css
 
 # API directory
 log
-#api/log/*
-#api/pids/*
+api/log/*
+api/pids/*
 
 # Editors
 .idea
