@@ -38,6 +38,52 @@ var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
+ * Create API Server (Web, Socket, WebSocket) ActionHero.js
+ */
+var ActionheroPrototype = require('actionhero').actionheroPrototype;
+var actionhero = new ActionheroPrototype();
+var params = {};
+params.configChanges = {
+    general: function(api){
+        return {
+            paths: {
+                'action':      [ __dirname + '/api/actions'      ] ,
+                'config':      [ __dirname + '/api/config '      ] ,
+                'initializer': [ __dirname + '/api/initializers' ] ,
+                'log':         [ __dirname + '/api/log'          ] ,
+                'pid':         [ __dirname + '/api/pids'         ] ,
+                'public':      [ __dirname + '/api/public'       ] ,
+                'server':      [ __dirname + '/api/servers'      ] ,
+                'task':        [ __dirname + '/api/tasks'        ] ,
+                'test':        [ __dirname + '/api/test '        ] ,
+                'plugin':      [ __dirname + '/node_modules'     ]
+            },
+            //developmentMode: true
+        }
+    },servers: {
+        socket: function(api){
+            return {
+                enabled: true,
+                // TCP or TLS?
+                secure: false,
+                // passed to tls.createServer if secure=true. Should contain SSL certificates
+                serverOptions: {},
+                // Port or Socket
+                port: 5000,
+                // which IP to listen on (use 0.0.0.0 for all)
+                bindIP: '0.0.0.0',
+                // Enabple TCP KeepAlive pings on each connection?
+                setKeepAlive: false
+            }
+        }
+    }
+};
+
+actionhero.start(params, function(err, api){
+    if(err){ console.log(err); }
+});
+
+/**
  * Create Express server.
  */
 var app = express();

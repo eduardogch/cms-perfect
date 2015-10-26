@@ -19,6 +19,11 @@ bower_components
 public/vendor/*
 public/css/resources.css
 
+# API directory
+log
+#api/log/*
+#api/pids/*
+
 # Editors
 .idea
 *.iml
