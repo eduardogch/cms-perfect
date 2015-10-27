@@ -18,7 +18,7 @@ exports.default = {
 
     // file logger
     try{
-      fs.mkdirSync(api.config.general.paths.log[0]);
+      fs.mkdirSync(api.config.general.paths.log[0] + '/');
     } catch(e) {
       if(e.code !== 'EEXIST'){
         return next([new Error('Cannot create ./log directory'), e])

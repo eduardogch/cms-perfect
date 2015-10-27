@@ -40,28 +40,16 @@ var passportConf = require('./config/passport');
 /**
  * API Server configurations.
  */
-var api = require('./api/config/api.js');
-var socket = require('./api/config/servers/socket.js');
-var web = require('./api/config/servers/web.js');
-var websocket = require('./api/config/servers/websocket.js');
+var fs = require('fs-extra');
+fs.copySync('./api/config', './node_modules/actionhero/config');
 
 /**
  * Create API Server (Web, Socket, WebSocket) ActionHero.js
  */
 var ActionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new ActionheroPrototype();
-var params = {};
-
-params.configChanges = {
-    general: api.default.general(),
-    servers: {
-        socket: socket.default.servers.socket(),
-        web: web.default.servers.web(),
-        websocket: websocket.default.servers.websocket()
-    }
-};
-actionhero.start(params, function(err, api){
-    if(err){ console.log(err); }
+actionhero.start(function(err){
+    if (err) return console.error(err);
 });
 
 /**
