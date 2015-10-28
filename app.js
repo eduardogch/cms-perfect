@@ -60,6 +60,7 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
+mongoose.set('debug', true);
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
