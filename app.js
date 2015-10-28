@@ -61,7 +61,7 @@ var app = express();
  * Connect to MongoDB.
  */
 mongoose.set('debug', true);
-mongoose.connect(secrets.db);
+mongoose.connect(secrets.mongoDB);
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
@@ -91,7 +91,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
-  store: new MongoStore({ url: secrets.db, autoReconnect: true })
+  store: new MongoStore({ url: secrets.mongoDB, autoReconnect: true })
 }));
 app.use(passport.initialize());
 app.use(passport.session());

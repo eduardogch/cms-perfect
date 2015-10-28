@@ -1,8 +1,13 @@
-var mongoose = require('mongoose');
+/**
+ * Model: Book
+ */
+var thinky = require('./thinky.js');
+var type = thinky.type;
 
-var bookSchema = new mongoose.Schema({
-    year: String,
-    name: String
+var Book = thinky.createModel("Book", {
+    id: type.string(),
+    name: type.string(),
+    age: type.number()
 });
 
-module.exports = mongoose.model('Book', bookSchema);
+module.exports = Book;

@@ -21,7 +21,14 @@
 
 module.exports = {
 
-  db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test',
+  mongoDB: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test',
+
+  rethinkDB: {
+    host: process.env.RETHINKDB_HOST || 'localhost',
+    port: process.env.RETHINKDB_PORT || '28015',
+    authKey: process.env.RETHINKDB_AUTHKEY || '',
+    db: process.env.RETHINKDB_DB || 'test'
+  },
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 

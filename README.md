@@ -6,41 +6,72 @@
 ## Requirements
 
 * Ubuntu, Mac, Windows
-* JavaScript, NodeJS, Angular, Gulp, Bower, MongoDB
+* JavaScript, NodeJS, NPM, Angular, ActionHero, Bower
+* RethinkDB, Redis, MongoDB
 * WebStorm, Visual Studio Code, Gedit
 
 ## Project base on:
 
 	https://github.com/sahat/hackathon-starter
+	https://github.com/evantahler/actionhero
 
-## HTML templates:
+## Front-End Templates:
 
 	http://startbootstrap.com/template-overviews/sb-admin-2/
 	http://blacktie.co/2013/12/flatty-app-landing-page/
 
 -----
 
-## Set up NodeJS and MongoDB
-To setting up the software needed just follow the next tutorial:
-
-	http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
-
-## Quick Install
+# Quick Install
 Just run in the console this commands:
 
 	cd ~/Apps
 	git clone https://eduardogch@bitbucket.org/eduardogch/cms-perfect.git
 	cd cms-perfect
-	npm dedupe && npm install
-	sudo npm install -g nodemon mocha gulp bower
+	sudo npm install -g npm node-gyp nodemon mocha bower
+	rm -rf node_modules && npm install && npm dedupe
 	bower install
 	nodemon app.js
-	
+
 -----
 
-## Run, debug and test
+## Guide to install software needed in Ubuntu 14.04
 
-In Webstorm and set this values to Run and Debug the project:
+### Install NodeJS, NPM and Mongo
+	curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
+	sudo apt-get update && sudo apt-get install nodejs node-gyp npm mongodb
+	sudo ln -s /usr/bin/nodejs /usr/bin/node
+	sudo npm install -g npm
+
+### Install RethinkDB
+    source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+    wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
+    sudo apt-get update && sudo apt-get install rethinkdb 
+    
+### Config RethinkDB
+    sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
+    sudo /etc/init.d/rethinkdb restart
+    
+    #Find and uncomment in .conf file http-port var
+    sudo nano /etc/rethinkdb/instances.d/instance1.conf
+        http-port=8081
+
+### Install Redis
+    sudo apt-get update && sudo apt-get install redis-server 
+    sudo update-rc.d redis-server defaults 
+    sudo /etc/init.d/redis-server start  
+
+### References
+    https://nodejs.org/en/download/
+    https://rethinkdb.com/docs/install/
+    https://docs.mongodb.org/manual/installation/
+    http://redis.io/download
+
+-----
+
+## Run, debug and test In Webstorm
+
+Set this values to Run and Debug the project:
 	
 	/usr/local/bin/nodemon
 	DEBUG=test:*
@@ -52,7 +83,7 @@ In Webstorm and set this values to Run and Debug the project:
 ![alt tag](http://i.imgur.com/ciB0es1.png)
 
 
-In Webstorm for testing use Mocha
+For testing use Mocha
 
 	~/Apps/cms-perfect/test
 	
@@ -64,8 +95,8 @@ In Webstorm for testing use Mocha
 
 Email [Email](mailto:eduardo.gch@gmail.com)
 
+Twitter [Twitter](https://twitter.com/eduardochavira_)
+
 Bitbucket [Bitbucket](https://bitbucket.org/eduardogch/cms-perfect)
 
 Issues [Bitbucket](https://bitbucket.org/eduardogch/cms-perfect/issues)
-
-Twitter [Twitter](https://twitter.com/eduardochavira_)
