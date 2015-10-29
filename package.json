@@ -25,7 +25,6 @@
     "clockwork": "^0.1.0",
     "compression": "^1.6.0",
     "conekta": "~1.1.1",
-    "connect-mongo": "^0.8.2",
     "cookie-parser": "^1.4.0",
     "csso": "^1.4.1",
     "errorhandler": "^1.4.2",

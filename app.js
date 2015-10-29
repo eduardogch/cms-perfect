@@ -13,7 +13,7 @@ var lusca = require('lusca');
 var methodOverride = require('method-override');
 
 var _ = require('lodash');
-var MongoStore = require('connect-mongo')(session);
+var RDBStore = require('express-session-rethinkdb')(session);
 var flash = require('express-flash');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -38,14 +38,10 @@ var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
- * API Server configurations.
+ * Create API Server (Web, Socket, WebSocket) ActionHero.js
  */
 var fs = require('fs-extra');
 fs.copySync('./api/config', './node_modules/actionhero/config');
-
-/**
- * Create API Server (Web, Socket, WebSocket) ActionHero.js
- */
 var ActionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new ActionheroPrototype();
 actionhero.start(function(err){
@@ -66,6 +62,12 @@ mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
 });
+
+/**
+ * Connect to RethinkDB.
+ */
+var thinky = require('thinky')(secrets.rethinkDB);
+thinky.createModel("session", {});
 
 /**
  * Express configuration.
@@ -91,7 +93,10 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
-  store: new MongoStore({ url: secrets.mongoDB, autoReconnect: true })
+  store: new RDBStore({connectOptions: {
+          servers: [{ host: secrets.rethinkDB.host, port: secrets.rethinkDB.port }],
+               db: secrets.rethinkDB.db},
+            table: 'session'})
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -262,3 +267,4 @@ app.listen(app.get('port'), function() {
 });
 
 module.exports = app;
+module.exports = thinky;
