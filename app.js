@@ -11,7 +11,6 @@ var logger = require('morgan');
 var errorHandler = require('errorhandler');
 var lusca = require('lusca');
 var methodOverride = require('method-override');
-
 var _ = require('lodash');
 var RDBStore = require('express-session-rethinkdb')(session);
 var flash = require('express-flash');
@@ -38,6 +37,12 @@ var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
+ * Connect to RethinkDB.
+ */
+var thinky = require('thinky')(secrets.rethinkDB);
+thinky.createModel("session", {});
+
+/**
  * Create API Server (Web, Socket, WebSocket) ActionHero.js
  */
 var fs = require('fs-extra');
@@ -62,12 +67,6 @@ mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
   process.exit(1);
 });
-
-/**
- * Connect to RethinkDB.
- */
-var thinky = require('thinky')(secrets.rethinkDB);
-thinky.createModel("session", {});
 
 /**
  * Express configuration.
@@ -266,5 +265,5 @@ app.listen(app.get('port'), function() {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
-module.exports = app;
-module.exports = thinky;
+exports.thinky = thinky;
+exports.app = app;

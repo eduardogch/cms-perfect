@@ -59,7 +59,7 @@ Just run in the console this commands:
 ### Install Redis
     sudo apt-get update && sudo apt-get install redis-server 
     sudo update-rc.d redis-server defaults 
-    sudo /etc/init.d/redis-server start  
+    sudo /etc/init.d/redis-server start
 
 ### References
     https://nodejs.org/en/download/

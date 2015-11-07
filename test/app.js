@@ -1,5 +1,5 @@
 var request = require('supertest');
-var app = require('../app.js');
+var app = require('../app.js').app;
 
 describe('GET /', function() {
   it('should return 200 OK', function(done) {
@@ -25,19 +25,11 @@ describe('GET /signup', function() {
   });
 });
 
-describe('GET /api', function() {
+describe('GET /dashboard', function() {
   it('should return 200 OK', function(done) {
     request(app)
-      .get('/api')
-      .expect(200, done);
-  });
-});
-
-describe('GET /contact', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/contact')
-      .expect(200, done);
+      .get('/dashboard')
+      .expect(302, done);
   });
 });
 

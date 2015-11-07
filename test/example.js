@@ -5,6 +5,7 @@ var actionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new actionheroPrototype();
 var api;
 
+/*
 describe('actionhero Tests', function(){
 
   before(function(done){
@@ -26,4 +27,4 @@ describe('actionhero Tests', function(){
     should.exist(api.id);
   });
 
-});
+});*/
