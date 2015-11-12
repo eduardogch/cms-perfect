@@ -40,25 +40,25 @@ html
     script(src='/vendor/angular-datatables/dist/angular-datatables.min.js')
 
     // Angular Modules
-    script(src="/js/#{angularApp ? angularApp : 'DashboardApp'}.js")
+    script(src="/app/#{angularApp ? angularApp : 'DashboardApp'}.js")
 
     // Angular Controllers
-    script(src='/js/controllers/AccountController.js')
-    script(src='/js/controllers/AdminController.js')
-    script(src='/js/controllers/DashboardController.js')
-    script(src='/js/controllers/PaymentController.js')
+    script(src='/app/controllers/AccountController.js')
+    script(src='/app/controllers/AdminController.js')
+    script(src='/app/controllers/DashboardController.js')
+    script(src='/app/controllers/PaymentController.js')
 
     // Angular Services
-    script(src='/js/services/AccountService.js')
-    script(src='/js/services/AdminService.js')
-    script(src='/js/services/DashboardService.js')
-    script(src='/js/services/PaymentService.js')
+    script(src='/app/services/AccountService.js')
+    script(src='/app/services/AdminService.js')
+    script(src='/app/services/DashboardService.js')
+    script(src='/app/services/PaymentService.js')
 
     // Angular Directives
-    script(src="/js/directives/ngAttachment.js")
+    script(src="/app/directives/ngAttachment.js")
 
     // Angular Filters
-    script(src="/js/filters/customFilters.js")
+    script(src="/app/filters/customFilters.js")
 
     script.
       // Init Sidebar
