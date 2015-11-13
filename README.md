@@ -28,7 +28,7 @@ Just run in the console this commands:
 	cd ~/Apps
 	git clone https://eduardogch@bitbucket.org/eduardogch/cms-perfect.git
 	cd cms-perfect
-	sudo npm install -g npm node-gyp nodemon mocha bower
+	sudo npm install -g npm node-gyp nodemon mocha bower gulp
 	rm -rf node_modules && npm install && npm dedupe
 	bower install
 	nodemon app.js
