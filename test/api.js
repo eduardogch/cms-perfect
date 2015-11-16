@@ -8,8 +8,8 @@ describe('Actionhero.js Tests', function(){
         actionhero.initialize(function(err, apiFromCallback){
             if(err) return console.error(err);
             api = apiFromCallback;
+            done();
         });
-        done();
     });
     it('should Actionhero.js Server be up and running', function(done){
         actionhero.api.running.should.true;

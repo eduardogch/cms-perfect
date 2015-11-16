@@ -1,6 +1,3 @@
-/**
- * Model: Book
- */
 var thinky = require('../app.js').thinky;
 var type = thinky.type;
 
