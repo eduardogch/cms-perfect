@@ -1,6 +1,6 @@
 var should = require('chai').should();
 var request = require('supertest');
-var actionhero = require('../app.js').actionhero;
+var actionhero = require('../../app.js').actionhero;
 var api;
 
 describe('Actionhero.js Tests', function(){

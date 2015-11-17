@@ -1,6 +1,6 @@
 var should = require('chai').should();
 var request = require('request');
-var actionhero = require('../app.js').actionhero;
+var actionhero = require('../../app.js').actionhero;
 var api;
 var url;
 

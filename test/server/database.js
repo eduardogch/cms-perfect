@@ -1,7 +1,7 @@
 var should = require('chai').should();
 var request = require('supertest');
-var secrets = require('../config/secrets');
-var thinky = require('../app.js').thinky;
+var secrets = require('../../config/secrets');
+var thinky = require('../../app.js').thinky;
 var r = thinky.r;
 var tableName = 'test'+ Math.floor(Math.random() * 100) + 1;
 

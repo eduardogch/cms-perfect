@@ -1,5 +1,5 @@
 var request = require('supertest');
-var app = require('../app.js').app;
+var app = require('../../app.js').app;
 
 describe('General Routes', function () {
     it('should return 200 in GET /', function (done) {
