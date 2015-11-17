@@ -14,6 +14,7 @@ describe('WebSocket Test', function() {
         });
     });
     it("Test Websocket", function (done) {
+        //TODO test in Websockets
         true.should.be.true;
         done();
     });

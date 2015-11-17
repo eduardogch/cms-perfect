@@ -7,8 +7,8 @@
 
 * Ubuntu, Mac, Windows
 * JavaScript, NodeJS, NPM, Angular, ActionHero, Bower
-* RethinkDB, Redis, MongoDB
-* WebStorm, Visual Studio Code, Gedit
+* MongoDB, Redis, 
+* WebStorm, Gedit
 
 ## Project base on:
 
@@ -37,24 +37,17 @@ Just run in the console this commands:
 
 ## Guide to install software needed in Ubuntu 14.04
 
-### Install NodeJS, NPM and Mongo
+### Install NodeJS and NPM 
 	curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
-	sudo apt-get update && sudo apt-get install nodejs node-gyp npm mongodb
+	sudo apt-get update && sudo apt-get install nodejs node-gyp npm 
 	sudo ln -s /usr/bin/nodejs /usr/bin/node
 	sudo npm install -g npm
 
-### Install RethinkDB
-    source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
-    wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
-    sudo apt-get update && sudo apt-get install rethinkdb 
-    
-### Config RethinkDB
-    sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
-    sudo /etc/init.d/rethinkdb restart
-    
-    #Find and uncomment in .conf file http-port var
-    sudo nano /etc/rethinkdb/instances.d/instance1.conf
-        http-port=8081
+### Install MongoDB
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+    echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
 
 ### Install Redis
     sudo apt-get update && sudo apt-get install redis-server 
@@ -63,7 +56,6 @@ Just run in the console this commands:
 
 ### References
     https://nodejs.org/en/download/
-    https://rethinkdb.com/docs/install/
     https://docs.mongodb.org/manual/installation/
     http://redis.io/download
 
