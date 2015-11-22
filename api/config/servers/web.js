@@ -30,11 +30,11 @@ exports.default = {
         //  Visitors can always visit /api and /public as normal
         rootEndpointType : 'file',
         // simple routing also adds an 'all' route which matches /api/:action for all actions
-        simpleRouting : true,
+        simpleRouting : false,
         // queryRouting allows an action to be defined via a URL param, ie: /api?action=:action
-        queryRouting : true,
+        queryRouting : false,
         // The header which will be returned for all flat file served from /public; defined in seconds
-        flatFileCacheDuration : 60,
+        flatFileCacheDuration : 1,
         // How many times should we try to boot the server?
         // This might happen if the port is in use by another process or the socketfile is claimed
         bootAttempts: 1,
@@ -74,18 +74,25 @@ exports.default = {
   }
 }
 
-exports.production = { 
-  servers: {
-    web: function(api){
-      return {
-        padding: null,
-        metadataOptions: {
-          serverInformation: false,
-          requesterInformation: false
+exports.production = {
+    servers: {
+        web: function(api){
+            return {
+                flatFileCacheDuration : 60,
+                padding: null,
+                httpHeaders : {
+                    'X-Powered-By'                : api.config.general.serverName,
+                    'Access-Control-Allow-Origin' : 'angular.actionherojs.com',
+                    'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS, TRACE',
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                },
+                metadataOptions: {
+                    serverInformation: false,
+                    requesterInformation: false
+                }
+            }
         }
-      }
     }
-  }
 }
 
 exports.test = {

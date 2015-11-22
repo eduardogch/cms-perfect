@@ -1,9 +1,11 @@
+var secrets = require('../../../config/secrets');
+
 exports.default = {
     mongo: function(api){
         return {
             enable: true,
             startMongo: false,
-            connectionURL: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test',
+            connectionURL: secrets.mongoDB,
             debug: true,
             modelPath: api.projectRoot + '/models'
         };

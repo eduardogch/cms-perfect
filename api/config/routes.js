@@ -1,32 +1,28 @@
-exports.default = { 
-  routes: function(api){
-    return {
-      
-      /* ---------------------
-      routes.js 
+exports.default = {
+    routes: function(api){
+        return {
 
-      For web clients (http and https) you can define an optional RESTful mapping to help route requests to actions.
-      If the client doesn't specify and action in a param, and the base route isn't a named action, the action will attempt to be discerned from this routes.js file.
+            get: [
+                { path: '/user',     action: 'user:view' },
+                { path: '/docs',     action: 'showDocumentation' },
+                { path: '/status',   action: 'status' },
+            ],
 
-      Learn more here: http://www.actionherojs.com/docs/servers/web.html
+            post: [
+                { path: '/session',  action: 'session:create' },
+                { path: '/user',     action: 'user:create' },
+            ],
 
-      examples:
-      
-      get: [
-        { path: '/users', action: 'usersList' }, // (GET) /api/users
-        { path: '/search/:term/limit/:limit/offset/:offset', action: 'search' }, // (GET) /api/search/car/limit/10/offset/100
-      ],
+            put: [
+                { path: '/session',  action: 'session:check' },
+                { path: '/user',     action: 'user:edit' },
+            ],
 
-      post: [
-        { path: '/login/:userID(^\\d{3}$)', action: 'login' } // (POST) /api/login/123
-      ],
+            delete: [
+                { path: '/session',  action: 'session:destroy' },
+                { path: '/registry', action: 'registry:destroy' },
+            ],
 
-      all: [
-        { path: '/user/:userID', action: 'user' } // (*) / /api/user/123
-      ]
-      
-      ---------------------- */
-      
+        };
     }
-  }
-}
+};

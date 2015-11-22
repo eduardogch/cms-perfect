@@ -38,9 +38,15 @@ var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
+ * Set Node Environment
+ */
+process.env.NODE_ENV = 'development'; // 'development' or 'production'
+var envFlag = (process.env.NODE_ENV == 'development') ? true : false;
+
+/**
  * Connect to MongoDB.
  */
-mongoose.set('debug', true);
+mongoose.set('debug', envFlag);
 mongoose.connect(secrets.mongoDB);
 mongoose.connection.on('error', function() {
     console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
@@ -50,11 +56,17 @@ mongoose.connection.on('error', function() {
 /**
  * Create API Server (Web, Socket, WebSocket) ActionHero.js
  */
+fs.removeSync('./node_modules/actionhero/config');
 fs.copySync('./api/config', './node_modules/actionhero/config');
 var ActionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new ActionheroPrototype();
-actionhero.start(function(err){
-    if (err) return console.error(err);
+var configChanges = {
+    general: {
+        developmentMode: envFlag
+    }
+};
+actionhero.start({configChanges: configChanges}, function(err){
+    if(err){ console.log(err); }
 });
 
 /**
@@ -72,7 +84,7 @@ app.use(compress());
 app.use(sass({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  debug: true,
+  debug: envFlag,
   outputStyle: 'compressed'
 }));
 app.use(logger('dev'));
