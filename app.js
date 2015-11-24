@@ -60,13 +60,8 @@ fs.removeSync('./node_modules/actionhero/config');
 fs.copySync('./api/config', './node_modules/actionhero/config');
 var ActionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new ActionheroPrototype();
-var configChanges = {
-    general: {
-        developmentMode: envFlag
-    }
-};
-actionhero.start({configChanges: configChanges}, function(err){
-    if(err){ console.log(err); }
+actionhero.start(function(err){
+    if (err) return console.error(err);
 });
 
 /**
@@ -229,7 +224,6 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 app.get('/views/:name', function (req, res) {
   res.render('angular/' + req.params.name);
 });
-
 app.get('/partials/:name', function (req, res) {
   res.render('angular/partials' + req.params.name);
 });
@@ -271,5 +265,5 @@ app.listen(app.get('port'), function() {
 /**
  * Modules Actionhero and Express
  */
-exports.actionhero = actionhero;
-exports.app = app;
+module.exports.actionhero = actionhero;
+module.exports.app = app;

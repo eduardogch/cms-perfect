@@ -1,12 +1,4 @@
-var secrets = require('../config/secrets');
-var nodemailer = require("nodemailer");
-var transporter = nodemailer.createTransport({
-  service: 'SendGrid',
-  auth: {
-    user: secrets.sendgrid.user,
-    pass: secrets.sendgrid.password
-  }
-});
+var transporter = require("../config/email");
 
 /**
  * GET /dashboard
@@ -21,7 +13,7 @@ exports.getDashboard = function(req, res) {
 
 /**
  * POST /dashboard
- * Send a contact form via Nodemailer.
+ * Send a email.
  */
 exports.postContact = function(req, res) {
   req.assert('name', 'Name cannot be blank').notEmpty();
@@ -35,17 +27,10 @@ exports.postContact = function(req, res) {
     return res.redirect('/contact');
   }
 
-  var from = 'system@cmsperfect.com';
-  var name = req.body.name;
-  var body = req.body.message;
-  var to = req.body.email;
-  var subject = 'Contact Form | CMS Perfect';
-
   var mailOptions = {
-    to: to,
-    from: from,
-    subject: subject,
-    text: body
+    to: req.body.email,
+    subject: 'Contact Form | CMS Perfect',
+    text: req.body.message
   };
 
   transporter.sendMail(mailOptions, function(err) {

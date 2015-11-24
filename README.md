@@ -39,18 +39,18 @@ Just run in the console this commands:
 
 ### Install NodeJS and NPM 
 	curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
-	sudo apt-get update && sudo apt-get install nodejs node-gyp npm 
+	sudo apt-get -y update sudo apt-get -y install nodejs node-gyp npm
 	sudo ln -s /usr/bin/nodejs /usr/bin/node
 	sudo npm install -g npm
+	sudo npm install -g npm node-gyp nodemon mocha karma-cli bower gulp
 
 ### Install MongoDB
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
     echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-    sudo apt-get update
-    sudo apt-get install -y mongodb-org
+    sudo apt-get -y update && sudo apt-get -y install mongodb-org
 
 ### Install Redis
-    sudo apt-get update && sudo apt-get install redis-server 
+    sudo apt-get -y update && sudo apt-get -y install redis-server 
     sudo update-rc.d redis-server defaults 
     sudo /etc/init.d/redis-server start
 
