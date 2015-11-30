@@ -5,10 +5,10 @@
 
 ## Requirements
 
-* Ubuntu, Mac, Windows
-* JavaScript, NodeJS, NPM, Angular, ActionHero, Bower
-* MongoDB, Redis, 
-* WebStorm, Gedit
+* Windows, Linux, Mac, 
+* NodeJS, NPM, Angular, ActionHero, Bower
+* MongoDB, Redis
+* WebStorm, Nodepad++
 
 ## Project base on:
 
@@ -28,10 +28,34 @@ Just run in the console this commands:
 	cd ~/Apps
 	git clone https://eduardogch@bitbucket.org/eduardogch/cms-perfect.git
 	cd cms-perfect
-	sudo npm install -g npm node-gyp nodemon mocha karma-cli bower gulp
-	rm -rf node_modules && npm install && npm dedupe
-	bower install
+	npm install -g npm node-gyp nodemon mocha karma-cli bower gulp
+	npm install && bower install
 	nodemon app.js
+
+-----
+
+## Run, debug and test In Webstorm
+
+Run and Debug the project:
+	
+	C:\Users\Eduardo\AppData\Roaming\npm\nodemon.cmd
+	DEBUG=test:*
+	
+![alt tag](http://i.imgur.com/DfOZhVl.png)
+
+For Mocha server testing 
+
+    C:\Apps\cms-perfect\test\server
+	
+![alt tag](http://i.imgur.com/AHy3zZU.png)
+
+For Karma client testing 
+
+![alt tag](http://i.imgur.com/lfuds5M.png)
+
+For Gulp 
+	
+![alt tag](http://i.imgur.com/glK5QPC.png)
 
 -----
 
@@ -42,7 +66,7 @@ Just run in the console this commands:
 	sudo apt-get -y update sudo apt-get -y install nodejs node-gyp npm
 	sudo ln -s /usr/bin/nodejs /usr/bin/node
 	sudo npm install -g npm
-	sudo npm install -g npm node-gyp nodemon mocha karma-cli bower gulp
+	sudo npm install -g node-gyp nodemon mocha karma-cli bower gulp
 
 ### Install MongoDB
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -58,28 +82,6 @@ Just run in the console this commands:
     https://nodejs.org/en/download/
     https://docs.mongodb.org/manual/installation/
     http://redis.io/download
-
------
-
-## Run, debug and test In Webstorm
-
-Set this values to Run and Debug the project:
-	
-	/usr/local/bin/nodemon
-	DEBUG=test:*
-	
-![alt tag](http://i.imgur.com/KUBvW44.png)
-	
-	http://localhost:3000/
-	
-![alt tag](http://i.imgur.com/ciB0es1.png)
-
-
-For testing use Mocha
-
-	~/Apps/cms-perfect/test
-	
-![alt tag](http://i.imgur.com/JEcewFl.png)
 
 -----
 

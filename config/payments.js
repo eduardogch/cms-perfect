@@ -10,8 +10,8 @@ var conekta;
 stripe.charges.create({
     amount: 395,
     currency: 'usd',
-    source: stripeToken,
-    description: stripeEmail
+    source: 'hola',
+    description: 'hola'
 }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
         console.log('Your card has been declined.');
@@ -36,4 +36,4 @@ var bitgo = new BitGo.BitGo({ env: 'test', accessToken: secrets.bitgo.accessToke
 /**
  * Module Nodemailer.
  */
-module.exports = transporter;
+//module.exports = transporter;
