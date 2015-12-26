@@ -35,11 +35,6 @@ module.exports = {
     password: process.env.MANDRILL_PASSWORD || 'E1K950_ydLR4mHw12a0ldA'
   },
 
-  sendgrid: {
-    user: process.env.SENDGRID_USER || 'eduardogch',
-    password: process.env.SENDGRID_PASSWORD || 'Chavir@04'
-  },
-
   nyt: {
     key: process.env.NYT_KEY || '9548be6f3a64163d23e1539f067fcabd:5:68537648'
   },
